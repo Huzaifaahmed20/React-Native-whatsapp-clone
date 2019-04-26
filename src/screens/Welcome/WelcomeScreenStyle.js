@@ -22,7 +22,7 @@ export default StyleSheet.create({
     marginTop: 150
   },
   linkStyle: {
-    color: "#00a49b",
+    color: "#00a49b"
   },
   buttonView: {
     justifyContent: "center",
@@ -33,5 +33,13 @@ export default StyleSheet.create({
     width: "100%",
     borderTopColor: "#00b022",
     borderTopWidth: 10
+  },
+  agreeButton: {
+    backgroundColor: "#323b40",
+    paddingVertical: 10,
+    paddingHorizontal: 100
+  },
+  buttonTextStyle: {
+    color: "#fff"
   }
 });

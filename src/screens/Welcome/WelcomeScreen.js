@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Text, View, Image, TouchableOpacity } from "react-native";
+import { Text, View, Image } from "react-native";
 import WelcomeScreenStyle from "./WelcomeScreenStyle";
 import CustomButton from "../../components/CustomButton";
 
@@ -20,6 +20,8 @@ export default class WelcomeScreen extends Component {
         </Text>
         <View style={WelcomeScreenStyle.buttonView}>
           <CustomButton
+            buttonTextStyle={WelcomeScreenStyle.buttonTextStyle}
+            customButtonStyle={WelcomeScreenStyle.agreeButton}
             onPress={() => this.props.navigation.navigate("Verify")}
             buttonText="Agree and Continue"
           />
