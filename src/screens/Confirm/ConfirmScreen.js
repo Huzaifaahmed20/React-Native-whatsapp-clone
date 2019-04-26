@@ -3,8 +3,12 @@ import { Text, View } from "react-native";
 import ConfirmScreenStyle from "./ConfirmScreenStyle";
 import { TextInput } from "react-native-gesture-handler";
 import Icon from "react-native-vector-icons/FontAwesome5";
+import CustomButton from "../../components/CustomButton";
 
 export default class ConfirmScreen extends Component {
+  goToNext = () => {
+    this.props.navigation.navigate("Chats")
+  };
   render() {
     const { navigation } = this.props;
     return (
@@ -49,6 +53,14 @@ export default class ConfirmScreen extends Component {
             <Text style={ConfirmScreenStyle.resendTextStyle}>Call Me</Text>
             <Text style={ConfirmScreenStyle.timerStyle}>1:02</Text>
           </View>
+        </View>
+        <View style={ConfirmScreenStyle.nextButtonView}>
+          <CustomButton
+            onPress={this.goToNext}
+            buttonTextStyle={ConfirmScreenStyle.buttonTextStyle}
+            customButtonStyle={ConfirmScreenStyle.nextButtonStyle}
+            buttonText="Next"
+          />
         </View>
       </View>
     );

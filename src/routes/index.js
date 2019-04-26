@@ -9,6 +9,7 @@ import WelcomeScreen from "../screens/Welcome/WelcomeScreen";
 import VerifyScreen from "../screens/Verify/VerifyScreen";
 import IconButton from "../components/IconButtom";
 import ConfirmScreen from "../screens/Confirm/ConfirmScreen";
+import ChatScreen from "../screens/Chats/ChatScreen";
 
 const WelcomeStack = createStackNavigator(
   {
@@ -77,17 +78,24 @@ const WelcomeStack = createStackNavigator(
     }
   },
   {
-    // initialRouteName: "Confirm"
+    initialRouteName: "Confirm"
   }
 );
 
+const HomeStack = createStackNavigator({
+  Chats: {
+    screen: ChatScreen
+  }
+});
+
 const root = createSwitchNavigator(
   {
-    WelcomeStack
+    WelcomeStack,
+    HomeStack
   },
   {
     initialRouteName: "WelcomeStack"
   }
 );
 
-export default createAppContainer(WelcomeStack);
+export default createAppContainer(root);

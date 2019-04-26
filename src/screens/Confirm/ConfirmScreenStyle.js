@@ -55,5 +55,19 @@ export default StyleSheet.create({
     height: 10,
     borderTopColor: "#ccc",
     borderTopWidth: 2
+  },
+  nextButtonView: {
+    alignItems: "center",
+    marginTop: 300,
+    width: "100%"
+  },
+  nextButtonStyle: {
+    backgroundColor: "#00d466",
+    paddingVertical: 15,
+    paddingHorizontal: 50
+  },
+  buttonTextStyle: {
+    color: "#fff",
+    fontSize: 20
   }
 });
