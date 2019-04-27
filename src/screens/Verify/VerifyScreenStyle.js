@@ -22,17 +22,16 @@ export default StyleSheet.create({
   phoneNumber: {
     width: 200
   },
-  nextButtonView: {
-    alignItems: "center",
-    marginTop: 400,
-    width: "100%"
-  },
   nextButtonStyle: {
+    marginTop: 230,
+    alignSelf: 'center',
+    justifyContent: 'flex-end',
     backgroundColor: "#00d466",
     paddingVertical: 15,
-    paddingHorizontal: 50
+    width: '30%',
   },
   buttonTextStyle: {
+    textAlign: 'center',
     color: "#fff",
     fontSize: 20
   }

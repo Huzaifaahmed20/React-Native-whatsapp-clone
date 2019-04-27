@@ -21,11 +21,12 @@ const WelcomeStack = createStackNavigator(
     },
     Verify: {
       screen: VerifyScreen,
-      navigationOptions: ({}) => {
+      navigationOptions: ({ }) => {
         return {
           title: "Verify your phone number",
           headerLeft: <View style={{ padding: 6 }} />, //add this
           headerTitleStyle: {
+            fontSize: 15,
             color: "#12887d",
             textAlign: "center",
             flexGrow: 1,
@@ -78,7 +79,7 @@ const WelcomeStack = createStackNavigator(
     }
   },
   {
-    initialRouteName: "Confirm"
+    // initialRouteName: "Confirm"
   }
 );
 

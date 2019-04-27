@@ -4,13 +4,13 @@ export default StyleSheet.create({
   container: {
     backgroundColor: "#003a3c",
     flex: 1,
-    justifyContent: "center",
+    justifyContent: "space-between",
     alignItems: "center"
   },
   logoStyle: {
     height: 100,
     width: 100,
-    marginTop: 220
+    marginTop: 150
   },
   welcomeText: {
     color: "#ffffff",
@@ -19,7 +19,7 @@ export default StyleSheet.create({
   },
   tapStyle: {
     color: "#ffffff",
-    marginTop: 150
+    marginTop: 60
   },
   linkStyle: {
     color: "#00a49b"

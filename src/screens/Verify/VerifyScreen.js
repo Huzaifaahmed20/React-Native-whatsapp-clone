@@ -73,14 +73,12 @@ export default class VerifyScreen extends Component {
             style={VerifyScreenStyle.phoneNumber}
           />
         </View>
-        <View style={VerifyScreenStyle.nextButtonView}>
           <CustomButton
             onPress={this.goToNext}
             buttonTextStyle={VerifyScreenStyle.buttonTextStyle}
             customButtonStyle={VerifyScreenStyle.nextButtonStyle}
             buttonText="Next"
           />
-        </View>
       </View>
     );
   }
