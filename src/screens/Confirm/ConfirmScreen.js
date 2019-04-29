@@ -7,7 +7,7 @@ import CustomButton from "../../components/CustomButton";
 
 export default class ConfirmScreen extends Component {
   goToNext = () => {
-    this.props.navigation.navigate("Chats")
+    this.props.navigation.navigate("Home")
   };
   render() {
     const { navigation } = this.props;

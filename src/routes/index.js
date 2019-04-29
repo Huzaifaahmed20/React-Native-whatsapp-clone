@@ -1,15 +1,18 @@
 import React from "react";
-import { View } from "react-native";
+import { View, Text } from "react-native";
 import {
   createAppContainer,
   createStackNavigator,
-  createSwitchNavigator
+  createSwitchNavigator,
+  createMaterialTopTabNavigator
 } from "react-navigation";
 import WelcomeScreen from "../screens/Welcome/WelcomeScreen";
 import VerifyScreen from "../screens/Verify/VerifyScreen";
 import IconButton from "../components/IconButtom";
 import ConfirmScreen from "../screens/Confirm/ConfirmScreen";
 import ChatScreen from "../screens/Chats/ChatScreen";
+import StatusScreen from "../screens/Status/StatusScreen";
+import CallsScreens from "../screens/Calls/CallsScreen";
 
 const WelcomeStack = createStackNavigator(
   {
@@ -21,7 +24,7 @@ const WelcomeStack = createStackNavigator(
     },
     Verify: {
       screen: VerifyScreen,
-      navigationOptions: ({ }) => {
+      navigationOptions: ({}) => {
         return {
           title: "Verify your phone number",
           headerLeft: <View style={{ padding: 6 }} />, //add this
@@ -83,9 +86,80 @@ const WelcomeStack = createStackNavigator(
   }
 );
 
+const FeaturesTab = createMaterialTopTabNavigator(
+  {
+    // Camera: {
+    //   screen: ChatScreen,
+    //   navigationOptions: () => ({
+    //     tabBarLabel: 'Home',
+    //     tabBarIcon: ({ tintColor }) => (
+    //       <IconButton iconName="camera" iconSize={25} iconColor="#ffffff" />
+    //     )
+    //   })
+    // },
+    Chat: {
+      screen: ChatScreen
+    },
+    Status: {
+      screen: StatusScreen
+    },
+    Calls: {
+      screen: CallsScreens
+    }
+  },
+  {
+    tabBarOptions: {
+      style: {
+        backgroundColor: "#005f56"
+      },
+      indicatorStyle: {
+        backgroundColor: "#ffffff",
+        height: 5
+      }
+    }
+  }
+);
+
 const HomeStack = createStackNavigator({
-  Chats: {
-    screen: ChatScreen
+  Home: {
+    screen: FeaturesTab,
+    navigationOptions: ({}) => {
+      return {
+        headerLeft: (
+          <Text
+            style={{
+              color: "#ffffff",
+              fontSize: 20,
+              fontWeight: "bold",
+              marginHorizontal: 20
+            }}
+          >
+            WhatsApp
+          </Text>
+        ),
+        headerStyle: {
+          backgroundColor: "#005f56",
+          elevation: 0,
+          shadowOpacity: 0,
+          borderBottomWidth: 0
+        },
+        headerRight: (
+          <View style={{ flexDirection: "row", paddingHorizontal: 30 }}>
+            <IconButton
+              iconButtonStyle={{ marginHorizontal: 30 }}
+              iconName="search"
+              iconSize={25}
+              iconColor="#ffffff"
+            />
+            <IconButton
+              iconName="ellipsis-v"
+              iconSize={25}
+              iconColor="#ffffff"
+            />
+          </View>
+        )
+      };
+    }
   }
 });
 
@@ -95,7 +169,7 @@ const root = createSwitchNavigator(
     HomeStack
   },
   {
-    initialRouteName: "WelcomeStack"
+    initialRouteName: "HomeStack"
   }
 );
 
