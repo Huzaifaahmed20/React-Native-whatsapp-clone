@@ -114,7 +114,8 @@ const FeaturesTab = createMaterialTopTabNavigator(
       },
       indicatorStyle: {
         backgroundColor: "#ffffff",
-        height: 5
+        height: 5,
+        borderRadius: 5
       }
     }
   }
@@ -148,12 +149,12 @@ const HomeStack = createStackNavigator({
             <IconButton
               iconButtonStyle={{ marginHorizontal: 30 }}
               iconName="search"
-              iconSize={25}
+              iconSize={20}
               iconColor="#ffffff"
             />
             <IconButton
               iconName="ellipsis-v"
-              iconSize={25}
+              iconSize={20}
               iconColor="#ffffff"
             />
           </View>

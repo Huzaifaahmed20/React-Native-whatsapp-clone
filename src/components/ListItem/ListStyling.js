@@ -30,7 +30,7 @@ export default StyleSheet.create({
     marginVertical: 15
   },
   lastMessageStyle: {
-    marginHorizontal: 10,
+    marginHorizontal: 2,
     fontSize: 15
   }
 });

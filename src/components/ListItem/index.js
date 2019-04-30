@@ -39,7 +39,7 @@ export default class ListItem extends Component {
             </View>
             <View style={ListStyling.nameAndLastMessage}>
               <Text style={ListStyling.nameStyle}>{name}</Text>
-              <View style={{ flexDirection: "row" }}>
+              <View style={{ flexDirection: "row", alignItems: 'center' }}>
                 <Icon
                   name={
                     seen && sent && delivered
@@ -50,7 +50,7 @@ export default class ListItem extends Component {
                       ? checkDelivered.name
                       : checkSent.name
                   }
-                  size={15}
+                  size={12}
                   color={
                     seen && sent && delivered
                       ? checkSeen.color
