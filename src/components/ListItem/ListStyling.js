@@ -3,26 +3,34 @@ import { StyleSheet } from "react-native";
 export default StyleSheet.create({
   childCont: {
     flexDirection: "row",
-    paddingHorizontal: 15,
+    paddingHorizontal: 10,
     paddingVertical: 10
   },
+  ImageView: {
+    backgroundColor: "#ffffff",
+    width: 50,
+    height: 50,
+    borderRadius: 50,
+    borderColor: "#88A8C5"
+  },
   avatarStyle: {
-    height: 70,
-    width: 70
+    height: 55,
+    width: 55,
+    borderRadius: 50
   },
   nameAndLastMessage: {
     justifyContent: "center",
-    paddingHorizontal: 10
+    paddingHorizontal: 20
   },
   nameStyle: {
     fontWeight: "bold",
-    fontSize: 22
+    fontSize: 17
   },
   timeStyle: {
-    marginHorizontal: 15,
     marginVertical: 15
   },
   lastMessageStyle: {
-    fontSize: 20
+    marginHorizontal: 10,
+    fontSize: 15
   }
 });

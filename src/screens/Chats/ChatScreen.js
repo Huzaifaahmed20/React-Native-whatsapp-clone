@@ -6,7 +6,17 @@ import ListItem from "../../components/ListItem";
 
 export default class ChatScreen extends Component {
   _renderItem = ({ item }) => (
-    <ListItem id={item.id} onPressItem={this._onPressItem} lastMessage={item.lastMessage} time={item.time} avatar={item.profileImage} name={item.name} />
+    <ListItem
+      seen={item.seen}
+      delivered={item.delivered}
+      sent={item.delivered}
+      id={item.id}
+      onPressItem={this._onPressItem}
+      lastMessage={item.lastMessage}
+      time={item.time}
+      avatar={item.profileImage}
+      name={item.name}
+    />
   );
   // profileImage
   // name
