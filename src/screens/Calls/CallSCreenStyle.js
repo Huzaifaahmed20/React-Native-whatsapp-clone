@@ -1,13 +1,13 @@
 import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
-  main: {
-    flex: 1,
-    backgroundColor: "#f4f4f4"
+  mainView: {
+    backgroundColor: "#f4f4f4",
+    flex: 1
   },
   floatingButton: {
     borderWidth: 1,
-    borderColor: "rgba(0,0,0,0.2)",
+    borderColor: "#00c859",
     alignItems: "center",
     justifyContent: "center",
     width: 60,

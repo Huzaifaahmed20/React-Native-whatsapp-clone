@@ -31,7 +31,13 @@ export default class ListItem extends Component {
     } = this.props;
     const { checkSeen, checkSent, checkDelivered } = checkStatus;
     return (
-      <View style={{ flex: 1 }}>
+      <View
+        style={{
+          flexDirection: "row",
+          justifyContent: "space-around",
+          paddingHorizontal: 15
+        }}
+      >
         <TouchableNativeFeedback>
           <View style={ListStyling.childCont}>
             <View style={ListStyling.ImageView}>
@@ -39,7 +45,7 @@ export default class ListItem extends Component {
             </View>
             <View style={ListStyling.nameAndLastMessage}>
               <Text style={ListStyling.nameStyle}>{name}</Text>
-              <View style={{ flexDirection: "row", alignItems: 'center' }}>
+              <View style={{ flexDirection: "row", alignItems: "center" }}>
                 <Icon
                   name={
                     seen && sent && delivered
@@ -70,9 +76,9 @@ export default class ListItem extends Component {
                 </Text>
               </View>
             </View>
-            <Text style={ListStyling.timeStyle}>{time}</Text>
           </View>
         </TouchableNativeFeedback>
+        <Text style={ListStyling.timeStyle}>{time}</Text>
       </View>
     );
   }

@@ -8,12 +8,13 @@ import {
 } from "react-navigation";
 import WelcomeScreen from "../screens/Welcome/WelcomeScreen";
 import VerifyScreen from "../screens/Verify/VerifyScreen";
-import IconButton from "../components/IconButtom";
+import IconButton from "../components/IconButton";
 import ConfirmScreen from "../screens/Confirm/ConfirmScreen";
 import ChatScreen from "../screens/Chats/ChatScreen";
 import StatusScreen from "../screens/Status/StatusScreen";
 import CallsScreens from "../screens/Calls/CallsScreen";
-
+import CameraScreen from "../screens/Camera/CmaeraScreen";
+import Icon from "react-native-vector-icons/FontAwesome5";
 const WelcomeStack = createStackNavigator(
   {
     Welcome: {
@@ -88,16 +89,17 @@ const WelcomeStack = createStackNavigator(
 
 const FeaturesTab = createMaterialTopTabNavigator(
   {
-    // Camera: {
-    //   screen: ChatScreen,
-    //   navigationOptions: () => ({
-    //     tabBarLabel: 'Home',
-    //     tabBarIcon: ({ tintColor }) => (
-    //       <IconButton iconName="camera" iconSize={25} iconColor="#ffffff" />
-    //     )
-    //   })
-    // },
-    Chat: {
+    Camera: {
+      screen: CameraScreen,
+      navigationOptions: {
+        tabBarIcon: ({ tintColor }) => (
+          <View style={{ marginTop: 25 }}>
+            <Icon name="camera" size={22} color={tintColor} />
+          </View>
+        )
+      }
+    },
+    Chats: {
       screen: ChatScreen
     },
     Status: {
@@ -109,15 +111,26 @@ const FeaturesTab = createMaterialTopTabNavigator(
   },
   {
     tabBarOptions: {
+      tabStyle: {
+        paddingTop: -30,
+      },
+      showIcon: true,
+
+      labelStyle: {
+        fontSize: 15,
+        color: "#ffffff",
+        fontWeight: "bold"
+      },
       style: {
         backgroundColor: "#005f56"
       },
       indicatorStyle: {
         backgroundColor: "#ffffff",
-        height: 5,
+        height: 3,
         borderRadius: 5
       }
-    }
+    },
+    initialRouteName: "Chats"
   }
 );
 
@@ -145,7 +158,7 @@ const HomeStack = createStackNavigator({
           borderBottomWidth: 0
         },
         headerRight: (
-          <View style={{ flexDirection: "row", paddingHorizontal: 30 }}>
+          <View style={{ flexDirection: "row", paddingHorizontal: 20 }}>
             <IconButton
               iconButtonStyle={{ marginHorizontal: 30 }}
               iconName="search"
@@ -170,7 +183,7 @@ const root = createSwitchNavigator(
     HomeStack
   },
   {
-    initialRouteName: "HomeStack"
+    initialRouteName: "WelcomeStack"
   }
 );
 

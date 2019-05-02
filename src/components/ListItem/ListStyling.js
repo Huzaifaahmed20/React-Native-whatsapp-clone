@@ -2,9 +2,9 @@ import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
   childCont: {
+    flex: 1,
     flexDirection: "row",
-    paddingHorizontal: 10,
-    paddingVertical: 10
+    paddingVertical: 10,
   },
   ImageView: {
     backgroundColor: "#ffffff",
