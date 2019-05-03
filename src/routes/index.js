@@ -15,6 +15,7 @@ import StatusScreen from "../screens/Status/StatusScreen";
 import CallsScreens from "../screens/Calls/CallsScreen";
 import CameraScreen from "../screens/Camera/CmaeraScreen";
 import Icon from "react-native-vector-icons/FontAwesome5";
+
 const WelcomeStack = createStackNavigator(
   {
     Welcome: {
@@ -130,7 +131,7 @@ const FeaturesTab = createMaterialTopTabNavigator(
         borderRadius: 5
       }
     },
-    initialRouteName: "Chats"
+    initialRouteName: "Camera"
   }
 );
 
@@ -183,7 +184,7 @@ const root = createSwitchNavigator(
     HomeStack
   },
   {
-    initialRouteName: "WelcomeStack"
+    initialRouteName: "HomeStack"
   }
 );
 

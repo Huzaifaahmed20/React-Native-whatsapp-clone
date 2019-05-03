@@ -1,5 +1,11 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+  Dimensions
+} from "react-native";
 import { RNCamera } from "react-native-camera";
 
 export default class CameraScreen extends Component {
@@ -29,17 +35,14 @@ export default class CameraScreen extends Component {
           onGoogleVisionBarcodesDetected={({ barcodes }) => {
             console.log(barcodes);
           }}
-        />
-        <View
-          style={{ flex: 0, flexDirection: "row", justifyContent: "center" }}
         >
-          <TouchableOpacity
-            onPress={this.takePicture.bind(this)}
-            style={styles.capture}
-          >
-            <Text style={{ fontSize: 14 }}> SNAP </Text>
-          </TouchableOpacity>
-        </View>
+          <View style={styles.buttonView}>
+            <TouchableOpacity
+              onPress={this.takePicture.bind(this)}
+              style={styles.capture}
+            />
+          </View>
+        </RNCamera>
       </View>
     );
   }
@@ -48,7 +51,7 @@ export default class CameraScreen extends Component {
     if (this.camera) {
       const options = { quality: 0.5, base64: true };
       const data = await this.camera.takePictureAsync(options);
-      console.log(data.uri);
+      console.warn(data.uri);
     }
   };
 }
@@ -64,13 +67,21 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end",
     alignItems: "center"
   },
-  capture: {
+  buttonView: {
     flex: 0,
-    backgroundColor: "#fff",
-    borderRadius: 5,
-    padding: 15,
-    paddingHorizontal: 20,
-    alignSelf: "center",
-    margin: 20
+    flexDirection: "row",
+    justifyContent: "center",
+    borderColor: "#ffffff",
+    borderRadius: 100,
+    borderWidth: 5,
+    width: 85,
+    height: 85,
+    alignItems: "center",
+    marginBottom: 20
+  },
+  capture: {
+    width: 75,
+    height: 75,
+    borderRadius: 50,
   }
 });
